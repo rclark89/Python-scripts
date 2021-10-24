@@ -1,0 +1,29 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+#simple array containing dummy SPT data
+y = np.array([1,2,3.5,4,5.5,6,7,8,10,12,15,17])
+x = np.array([10,11,15,20,10,11,40,50,10,8,7,6])
+
+#Allows us to manipulate the figure and axes separately.
+fig,ax = plt.subplots()
+
+#Adds stratum boundaries. Could this be automated and linked to certain SPT values?
+ax.axhspan(0, 6.5, facecolor='red', alpha=0.5, label='Made Ground')
+ax.axhspan(6.5, 9, facecolor='brown', alpha=0.5, label='Very gravelly sand')
+ax.axhspan(9, 14, facecolor='green', alpha=0.5, label='Silty sand')
+ax.axhspan(14, 20, facecolor='orange', alpha=0.5, label='Very clayey sand')
+
+#Inverts axes to allow for a realistic depth profile
+ax.set_ylim(max(y)+1,0)
+ax.set_xlim(0,max(x)+1)
+
+#Labels and legend
+plt.xlabel('Uncorrected SPT N value')
+plt.ylabel('Metres below ground level')
+plt.title('SPT values vs. depth')
+plt.legend(loc="upper right")
+
+
+plt.scatter(x,y)
+plt.show()
