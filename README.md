@@ -1,4 +1,4 @@
 # Python-scripts
 Python scripts
 
-This is a repository for short python scripts I use for geological applications.
+This is where I keep my Python scripts and Jupyter notebooks used for data analysis.
